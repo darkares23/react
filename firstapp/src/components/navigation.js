@@ -4,7 +4,7 @@ class Navigation extends Component{
   render(){
     return(
       <nav className="navbar navbar-dark bg-dark">
-        <a href="" className="text-white">
+        <a href="www.youtube.com" className="text-white">
           {this.props.tittle}
         </a>
       </nav>
