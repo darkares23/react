@@ -14,8 +14,14 @@
     },
     {
       "tittle": "task 3",
-      "responsible": "Tranh",
+      "responsible": "Franh",
       "description":"lorem ipsum 3",
+      "priority":"medium"
+    },
+    {
+      "tittle": "task 4",
+      "responsible": "mranh",
+      "description":"lorem ipsum 4",
       "priority":"high"
     }
   ]
