@@ -3,7 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 
 import {todos} from './todos.json'
-console.log(todos);
+import TodoForm from './components/TodoForms.js'
+
 
 class App extends Component {
   constructor(){
@@ -26,26 +27,37 @@ class App extends Component {
             <div className="card-body">
               <p>{todo.description}</p>
               <p><b>{todo.responsible}</b></p>
-              </div>
+            </div>
           </div>
         </div>
       )
     })
+
     return (
       <div className="App">
-        <nav>
-          <a href="" className="text-white">Task</a>
-          <span className="badge bagde-pill badge-light ml-2">
-            { this.state.todos.lenght }
-          </span>
-        </nav>
-        <div className="container">
-          <div className="row mt-4">
-            {todos}
-          </div>
-        </div>
-        <img src={logo} className="App-logo" alt="logo" />
 
+          <nav className="navbar navbar-dark bg-dark">
+            <a href="./App.js" className="text-white">
+                Task
+              <span className="badge bagde-pill badge-light ml-2">
+              { this.state.todos.length }
+              </span>
+            </a>
+          </nav>
+
+          <div className="container">
+            <div className="row mt-4">
+              <div className="col-md-3">
+                <img src={logo} className="App-logo" alt="logo" />
+                <TodoForm />
+              </div>
+              <div className="col-md-9">
+                <div className="row">
+                  {todos}
+                </div>
+              </div>
+            </div>
+          </div>
       </div>
     );
   }
