@@ -4,7 +4,7 @@ class TodoForm extends Component {
   constructor () {
     super();
     this.state = {
-      title: '',
+      tittle: '',
       responsible: '',
       description: '',
       priority: 'low'
@@ -17,7 +17,7 @@ class TodoForm extends Component {
     e.preventDefault();
     this.props.onAddTodo(this.state);
     this.setState({
-      title: '',
+      tittle: '',
       responsible: '',
       description: '',
       priority: 'low'
@@ -39,11 +39,11 @@ class TodoForm extends Component {
           <div className="form-group">
             <input
               type="text"
-              name="title"
+              name="tittle"
               className="form-control"
-              value={this.state.title}
+              value={this.state.tittle}
               onChange={this.handleInputChange}
-              placeholder="Title"
+              placeholder="Tittle"
               />
           </div>
           <div className="form-group">

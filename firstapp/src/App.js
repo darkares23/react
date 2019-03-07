@@ -15,9 +15,16 @@ class App extends Component {
     this.handleAddTodo = this.handleAddTodo.bind(this);
   }
 
+  removeTodo(index){
+    this.setState({
+      todos: this.state.todos.filter((e, i) =>{
+        return i !== index
+      })
+    });
+  }
   handleAddTodo(Todo){
     this.setState({
-      todos:[...this.state.todos, todo]
+      todos:[...this.state.todos, Todo]
     })
   }
 
@@ -35,6 +42,14 @@ class App extends Component {
             <div className="card-body">
               <p>{todo.description}</p>
               <p><b>{todo.responsible}</b></p>
+            </div>
+            <div className="card-footer">
+              <button
+                className=" btn btn-danger"
+                onClick={this.removeTodo.bind(this, i)}
+              >
+              Delete
+              </button>
             </div>
           </div>
         </div>
