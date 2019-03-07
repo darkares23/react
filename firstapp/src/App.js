@@ -11,8 +11,16 @@ class App extends Component {
     super();
     this.state={
       todos
-    }
+    };
+    this.handleAddTodo = this.handleAddTodo.bind(this);
   }
+
+  handleAddTodo(Todo){
+    this.setState({
+      todos:[...this.state.todos, todo]
+    })
+  }
+
   render() {
       const todos = this.state.todos.map((todo , i) => {
       return (
@@ -49,7 +57,7 @@ class App extends Component {
             <div className="row mt-4">
               <div className="col-md-3">
                 <img src={logo} className="App-logo" alt="logo" />
-                <TodoForm />
+                <TodoForm onAddTodo={this.handleAddTodo} />
               </div>
               <div className="col-md-9">
                 <div className="row">
